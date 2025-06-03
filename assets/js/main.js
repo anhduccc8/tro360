@@ -107,3 +107,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+// // JS Popup
+document.addEventListener("DOMContentLoaded", function () {
+    const popup = document.getElementById("reviewPopup");
+    const closeBtn = popup.querySelector(".close");
+
+    document.querySelectorAll(".btn-icon-dot").forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            popup.style.display = "block";
+        });
+    });
+
+    closeBtn.addEventListener("click", function () {
+        popup.style.display = "none";
+    });
+
+    window.addEventListener("click", function (event) {
+        if (event.target === popup) {
+            popup.style.display = "none";
+        }
+    });
+});
+
