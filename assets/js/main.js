@@ -1,0 +1,82 @@
+function navOpen() {
+    var x = document.getElementById("menu-reponsive");
+    if (x.className === "site-navigation") {
+        x.className += " navigation-open";
+    } else {
+        x.className = "site-navigation";
+    }
+}
+
+function handleSelectionChange() {
+    var dropdown = document.getElementById("myDropdown");
+}
+
+// Js Swiper carousel
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
+import { register } from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.mjs';
+
+register();
+
+window.addEventListener('DOMContentLoaded', () => {
+  const swiperEl = document.querySelector('.mySwiper');
+
+  if (swiperEl) {
+    swiperEl.slidesPerView = 1.2;
+    swiperEl.spaceBetween = 12;
+
+    swiperEl.breakpoints = {
+        0: {
+            slidesPerView: 1.3,
+            spaceBetween: 12,
+        },
+        575: {
+            slidesPerView: 1.5,
+            spaceBetween: 16,
+        },
+        768: {
+            slidesPerView: 2.5,
+            spaceBetween: 20,
+        },
+        992: {
+            slidesPerView: 3.5,
+            spaceBetween: 20,
+        },
+        1200: {
+            slidesPerView: 4.6,
+            spaceBetween: 24,
+        }
+    };
+  }
+});
+
+
+// Js Search box
+document.addEventListener('DOMContentLoaded', function () {
+    function toggleDropdown(id) {
+        document.querySelectorAll('.dropdown').forEach(d => d.style.display = 'none');
+        const dropdown = document.getElementById('dropdown-' + id);
+        if (dropdown) dropdown.style.display = 'block';
+    }
+
+    function selectValue(fieldId, value) {
+        document.getElementById(fieldId).innerText = value;
+        document.getElementById('dropdown-' + fieldId).style.display = 'none';
+    }
+
+    window.toggleDropdown = toggleDropdown;
+    window.selectValue = selectValue;
+
+    // Click ngoài để đóng dropdown
+    window.addEventListener('click', function(e) {
+        const fields = document.querySelectorAll('.field');
+        let clickedInside = false;
+        fields.forEach(field => {
+            if (field.contains(e.target)) clickedInside = true;
+        });
+        if (!clickedInside) {
+            document.querySelectorAll('.dropdown').forEach(d => d.style.display = 'none');
+        }
+    });
+});
+
+
