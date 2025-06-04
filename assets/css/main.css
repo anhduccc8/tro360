@@ -255,6 +255,49 @@ ul li {
     margin-bottom: 45px;
 } 
 
+/* Css dropdown list */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+.btn-icon-dot {
+    cursor: pointer;
+}
+.dropdown-menu {
+    padding: 4px 10px 5px;
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 0%;
+    left: auto;
+    background: #fff;
+    border: 1px solid #DFDFDF;
+    border-radius: 10px;
+    z-index: 2;
+    min-width: 170px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    @media (max-width: 1199px) {
+        top: 42px;
+    }
+}
+.dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+}
+.dropdown-menu li {
+    font-size: 16px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.dropdown-menu li:hover {
+    background-color: #f0f0f0;
+}
+.dropdown-menu li.delete {
+    color: red;
+}
+
 @media (max-width: 991px) {
     .md-hide {
         display: none !important;
