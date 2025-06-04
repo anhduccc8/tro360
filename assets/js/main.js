@@ -80,3 +80,54 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// Js Popup image
+document.addEventListener("DOMContentLoaded", function () {
+    const iconBtns = document.querySelectorAll('.gallery-icon');
+    const popup = document.getElementById('imagePopup');
+    const popupImg = document.getElementById('popupImage');
+    const closeBtn = document.querySelector('.popup-close');
+
+    iconBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const imgSrc = btn.getAttribute('data-img');
+          popupImg.src = imgSrc;
+          popup.style.display = 'flex';
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+
+    popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
+});
+
+
+// // JS Popup
+document.addEventListener("DOMContentLoaded", function () {
+    const popup = document.getElementById("reviewPopup");
+    const closeBtn = popup.querySelector(".close");
+
+    document.querySelectorAll(".btn-icon-dot").forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            popup.style.display = "block";
+        });
+    });
+
+    closeBtn.addEventListener("click", function () {
+        popup.style.display = "none";
+    });
+
+    window.addEventListener("click", function (event) {
+        if (event.target === popup) {
+            popup.style.display = "none";
+        }
+    });
+});
+

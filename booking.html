@@ -11,6 +11,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/single.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/header.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/footer.css">
 </head>	
@@ -264,12 +265,43 @@
 							</ul>
 						</div>
 					</div>
-
-
 				</div>
 			</div>
 		</section>
 	</footer>
+
+	<!-- Popup Review -->
+	<div id="reviewPopup" class="popup-review">
+	  	<div class="popup-content">
+	    	<span class="close">&times;</span>
+	    	<h5>Viết Đánh giá</h5>
+
+		    <div class="stars">
+		    	<span class="star" data-value="1">&#9733;</span>
+		    	<span class="star" data-value="2">&#9733;</span>
+		    	<span class="star" data-value="3">&#9733;</span>
+		    	<span class="star" data-value="4">&#9733;</span>
+		    	<span class="star" data-value="5">&#9733;</span>
+		    </div>
+
+		    <label class="checkbox">
+		      	<input type="checkbox" id="recommendCheckbox">
+		      	Tôi đã giới thiệu chỗ trọ này cho bạn tôi
+		    </label>
+
+		    <h4>Điều gì làm bạn ấn tượng?</h4>
+		    <div class="impression-buttons">
+		    	<button class="tag">Phòng trọ sạch sẽ</button>
+		    	<button class="tag active">Đầy đủ tiện nghi</button>
+		    	<button class="tag">Dịch vụ minh bạch</button>
+		    	<button class="tag">Chủ trọ thân thiện</button>
+		    </div>
+
+		    <textarea id="reviewText" maxlength="300" placeholder="Thêm đánh giá"></textarea>
+
+		    <button id="submitReview" class="submit-btn">Xong</button>
+	  	</div>
+	</div>
 
 	<script type="module" src="assets/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
