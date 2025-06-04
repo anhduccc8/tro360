@@ -131,3 +131,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Js Dropdown-booking
+document.addEventListener('click', function (e) {
+    const button = e.target.closest('.btn-icon-dot');
+    const container = e.target.closest('.dropdown-container');
+
+    // Đóng tất cả dropdown
+    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        if (!container || !container.contains(menu)) {
+          menu.style.display = 'none';
+        }
+    });
+
+    // Mở dropdown tương ứng nếu click vào nút
+    if (button && container) {
+        const dropdown = container.querySelector('.dropdown-menu');
+        dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+    }
+});
+
+
+
